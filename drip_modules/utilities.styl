@@ -67,3 +67,34 @@ hidden() {
 affix() {
   position: fixed;
 }
+
+// Inner Utils
+
+_boxSizing($boxModel = border-box) {
+    -webkit-box-sizing: $boxModel
+    -moz-box-sizing: $boxModel
+    box-sizing: $boxModel
+}
+
+_tabFocus(){
+    // Default
+    outline: thin dotted
+    // WebKit
+    outline: 5px auto -webkit-focus-ring-color
+    outline-offset: -2px
+}
+
+_textEmphasisVariant(color = $color){
+  color: color
+  a&:hover {
+    color: darken(color, 10%)
+  }  
+}
+
+_bgVariant(color = $color) {
+  background-color: color
+  a&:hover {
+    background-color: darken(color, 10%)
+  }  
+}
+  
