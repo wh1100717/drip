@@ -1,2 +1,5 @@
-init()
-    @import "./lib/normalize.styl"
+init($theme = default)
+    @import "./themes/" + $theme
+    @import "./lib/normalize"
+    @import "./lib/print"
+    @import "./lib/scaffolding"
