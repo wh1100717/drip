@@ -1,0 +1,40 @@
+alert(type = success)
+    padding: $alert-padding;
+    margin-bottom: $line-height-computed;
+    border: 1px solid transparent;
+    border-radius: $alert-border-radius;
+
+    // Headings for larger alerts
+    h4 {
+    margin-top: 0;
+        // Specified for the h4 to prevent conflicts of changing $headings-color
+        color: inherit;
+    }
+
+    // Improve alignment and spacing of inner content
+    > p,
+    > ul {
+        margin-bottom: 0;
+    }
+
+    > p + p {
+        margin-top: 5px;
+    }
+    if type is success
+        _alertVariant($alert-success-bg, $alert-success-border, $alert-success-text)
+    if type is info
+        _alertVariant($alert-info-bg, $alert-info-border, $alert-info-text)
+    if type is warning
+        _alertVariant($alert-warning-bg, $alert-warning-border, $alert-warning-text)
+    if type is danger
+        _alertVariant($alert-danger-bg, $alert-danger-border, $alert-danger-text)
+
+
+_alertVariant(background, border, textColor)
+    background-color: background;
+    border-color: border;
+    color: textColor;
+
+    hr {
+        border-top-color: darken(border, 5%);
+    }
